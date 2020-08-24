@@ -17,6 +17,8 @@ namespace dotnetShop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICandyRepository, CandyRepository>();
 
         }
 
