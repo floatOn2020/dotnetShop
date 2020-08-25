@@ -11,5 +11,13 @@
     <Folder Include="Views\Candy\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Shared\" />
+    <Folder Include="wwwroot\content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\lib\bootstrap\scss\_breadcrumb.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_buttons.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_card.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_carousel.scss" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\_close.scss" />
   </ItemGroup>
 </Project>
