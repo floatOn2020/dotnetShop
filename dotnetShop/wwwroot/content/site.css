@@ -1,8 +1,9 @@
 ﻿body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    background-image: url('/images/pattern.png');
-    background-repeat: repeat;
+    //background-image: url('/images/pattern.png');
+    //background-repeat: repeat;
     font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 
@@ -89,4 +90,15 @@ footer {
 .btn {
     background-color: #fcaeae !important;
     border-color: #fba1a1 !important;
+}
+
+.banner {
+    background-image:url("../Images/banner.jpg");
+    height: 36vh;
+    color: white;
+    font-size: 6rem;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    justify-content:center;
 }
