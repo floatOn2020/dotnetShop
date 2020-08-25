@@ -1,4 +1,5 @@
 ﻿using dotnetShop.Models;
+using dotnetShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 namespace dotnetShop.Controllers
@@ -15,9 +16,13 @@ namespace dotnetShop.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public ViewResult List()
+        public IActionResult List()
         {
-            return View(_candyRepository.GetAllCandy);
+            var candyListViewModel = new CandyListViewModel();
+            candyListViewModel.Candies = _candyRepository.GetAllCandy;
+            candyListViewModel.CurrentCategory = "Bestsellers";
+            return View(candyListViewModel);
         }
+
     }
 }
