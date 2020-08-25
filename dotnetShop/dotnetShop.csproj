@@ -20,4 +20,8 @@
     <Content Remove="wwwroot\lib\bootstrap\scss\_carousel.scss" />
     <Content Remove="wwwroot\lib\bootstrap\scss\_close.scss" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+  </ItemGroup>
 </Project>
