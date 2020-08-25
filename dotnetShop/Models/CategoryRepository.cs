@@ -17,10 +17,5 @@ namespace dotnetShop.Models
         }
     
         public IEnumerable<Category> GetAllCategories => _appDbContext.Categories;
-            
-        
-            //new Category{CategoryId=1, CategoryName="Licorice", CategoryDescription="Best of Denmark"},
-            //new Category{CategoryId=2, CategoryName="Chocolates", CategoryDescription="Blocks of Happiness"},
-            //new Category{CategoryId=3, CategoryName="Fruit Candy", CategoryDescription="Like real fruit, just without nutrition value"}
     }
 }
