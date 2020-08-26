@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,49 @@ namespace dotnetShop.Models
                 shoppingCartItem.Amount++;
             }
             _appDbContext.SaveChanges();
+        }
+
+        public int RemoveFromCart(Candy candy)
+        {
+            var shoppingCartItem = _appDbContext.ShoppingCartItems.SingleOrDefault(s => s.Candy.CandyId == candy.CandyId && s.ShoppingCartId == ShoppingCartId);
+            var localAmount = 0;
+
+            if (shoppingCartItem != null)
+            {
+                if (shoppingCartItem.Amount > 1)
+                {
+                    shoppingCartItem.Amount--;
+                    localAmount = shoppingCartItem.Amount;
+                }
+                else
+                {
+                    _appDbContext.ShoppingCartItems.Remove(shoppingCartItem);
+                }
+            }
+            _appDbContext.SaveChanges();
+            return localAmount;
+        }
+
+        public List<ShoppingCartItem> GetShoppingCartItems()
+        {
+            return ShoppingCartItems ?? (ShoppingCartItems = _appDbContext.ShoppingCartItems.Where(c
+                => c.ShoppingCartId == ShoppingCartId)
+                 .Include(s => s.Candy)
+                 .ToList());
+        }
+
+        public void ClearCart()
+        {
+            var cartItems = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId);
+            _appDbContext.ShoppingCartItems.RemoveRange(cartItems);
+            _appDbContext.SaveChanges();
+        }
+
+        public decimal GetShoppingCartTotal()
+        {
+            var total = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
+                .Select(c => c.Candy.Price * c.Amount).Sum();
+            return total;
         }
     }
 }
