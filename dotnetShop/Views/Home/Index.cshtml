@@ -1,0 +1,11 @@
+﻿@model HomeViewModel
+
+
+<h2>Candy On Sale</h2>
+
+<div class="row justify-content-around">
+    @foreach (var candy in Model.CandyOnSale)
+    {
+        <partial name="_candyCard" model="candy" />
+    }
+</div>

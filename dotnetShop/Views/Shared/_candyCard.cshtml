@@ -1,0 +1,16 @@
+﻿@model Candy
+<a class="candy-card" asp-action="Details" asp-route-id="@Model.CandyId">
+    <div class="col-xs-12 col-sm-4 candy-card-div">
+        <div class="thumbnail">
+            <div class="card-image">
+                <img src="@Model.ImageThumbnailUrl" alt="image of candy" />
+            </div>
+
+            <div class="caption">
+                <h3 class="pull-right">@Model.Price.ToString("c")</h3>
+                <h3>@Model.Name </h3>
+                <h4>@Model.Description</h4>
+            </div>
+        </div>
+    </div>
+</a>
