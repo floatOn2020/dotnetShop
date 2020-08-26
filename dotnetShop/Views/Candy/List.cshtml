@@ -2,7 +2,7 @@
 
 <h1>@Model.CurrentCategory</h1>
 <div class="d-flex flex-wrap can
-     dy-container">
+     dy-container justify-content-around">
     @foreach (var candy in Model.Candies)
     {   
         <partial name="_candyCard" model="candy" />
