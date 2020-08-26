@@ -1,7 +1,6 @@
 ﻿body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     font-family: 'Source Sans Pro', sans-serif;
-    background:red;
 }
 
 
@@ -104,4 +103,13 @@ footer {
 .candy-container {
     display: flex;
     flex-wrap: wrap;
+}
+
+.card-image {
+    max-height: 300px;
+    overflow: hidden;
+}
+.card-image img {
+    display: block;
+    width: 100%;
 }
