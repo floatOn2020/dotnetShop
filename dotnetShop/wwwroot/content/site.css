@@ -1,9 +1,7 @@
 ﻿body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    //background-image: url('/images/pattern.png');
-    //background-repeat: repeat;
     font-family: 'Source Sans Pro', sans-serif;
-
+    background:red;
 }
 
 
@@ -101,4 +99,9 @@ footer {
     align-items: center;
     display: flex;
     justify-content:center;
+}
+
+.candy-container {
+    display: flex;
+    flex-wrap: wrap;
 }
