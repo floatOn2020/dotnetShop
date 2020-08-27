@@ -110,13 +110,15 @@ footer {
 }
 .card-image img {
     display: block;
-    width: 100%;
+    max-width: 100%;
 }
 .candy-card {
     max-width: 300px;
+
 }
 .candy-card-div {
     display: flex;
     justify-content: center;
     display: contents;
+    overflow: hidden;
 }
